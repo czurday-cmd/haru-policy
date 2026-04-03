@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HARU - 개인정보처리방침</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #FAF7F2; color: #3D3229; line-height: 1.8; }
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+    h1 { font-size: 28px; margin-bottom: 8px; color: #7C6856; }
+    h2 { font-size: 18px; margin-top: 36px; margin-bottom: 12px; color: #5D4037; border-bottom: 1px solid #DDD5C8; padding-bottom: 6px; }
+    h3 { font-size: 15px; margin-top: 20px; margin-bottom: 8px; color: #6B5D50; }
+    p, li { font-size: 14px; color: #3D3229; margin-bottom: 8px; }
+    ul { padding-left: 20px; }
+    .date { font-size: 13px; color: #A89888; margin-bottom: 32px; }
+    .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #DDD5C8; font-size: 13px; color: #A89888; }
+    a { color: #7C6856; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>HARU 개인정보처리방침</h1>
+    <p class="date">시행일: 2026년 4월 1일 | 최종 수정: 2026년 4월 3일</p>
+
+    <h2>1. 수집하는 개인정보 항목</h2>
+    <h3>[필수 항목]</h3>
+    <ul>
+      <li>이메일, 이름</li>
+      <li>비밀번호 (일방향 암호화 처리 후 저장되며, 원문은 회사가 열람할 수 없습니다)</li>
+    </ul>
+    <h3>[서비스 이용 중 자동 생성 및 수집 항목]</h3>
+    <ul>
+      <li>서비스 이용 기록: 접속 로그, IP 주소, 기기 정보</li>
+      <li>일기 데이터: 제목, 본문, 요약, 태그(단기기억), 감정 색상, 업로드 이미지, 대화 기록</li>
+      <li>앱 설정 데이터: 테마, 질문 스타일, 알림 설정 등 사용자 환경 설정</li>
+    </ul>
+
+    <h2>2. 개인정보의 수집 및 이용 목적</h2>
+    <h3>[회원 관리]</h3>
+    <ul>
+      <li>본인 식별 및 가입 의사 확인</li>
+      <li>서비스 안정성 확보 및 부정 이용 방지</li>
+    </ul>
+    <h3>[서비스 제공]</h3>
+    <ul>
+      <li>일기 데이터 저장, 동기화, 백업</li>
+      <li>AI 인터뷰(질문 생성) 및 일기 작문 서비스 제공</li>
+      <li>장기기억·단기기억 분석 및 맞춤형 질문 제공</li>
+    </ul>
+    <h3>[고객 지원]</h3>
+    <ul>
+      <li>문의 사항 처리 및 공지사항 전달</li>
+    </ul>
+
+    <h2>3. 개인정보의 보관 및 파기</h2>
+    <h3>[원칙]</h3>
+    <p>회원의 개인정보는 수집 및 이용 목적이 달성된 후 지체 없이 파기합니다.</p>
+    <h3>[회원 탈퇴 시]</h3>
+    <ul>
+      <li>회원의 모든 데이터(일기, 이미지, 설정, 기억 데이터)는 탈퇴 요청 즉시 삭제됩니다.</li>
+      <li>전자적 파일 형태의 정보는 복원이 불가능한 방법으로 영구 삭제합니다.</li>
+    </ul>
+    <h3>[법령에 의한 보존]</h3>
+    <ul>
+      <li>서비스 방문 기록 (접속 로그, IP 주소): 3개월 (통신비밀보호법)</li>
+    </ul>
+
+    <h2>4. 개인정보의 처리 위탁 및 국외 이전</h2>
+    <p>회사는 원활한 서비스 제공을 위해 아래와 같이 개인정보 처리를 위탁하며, 일부 데이터가 국외로 이전될 수 있습니다.</p>
+    <h3>[수탁자 1: Supabase, Inc.]</h3>
+    <ul>
+      <li>이전 목적: 데이터베이스 및 이미지 클라우드 저장, 인증 시스템 운영</li>
+      <li>이전 위치: 대한민국 (서울 리전)</li>
+      <li>이전 항목: 회원 정보, 일기 데이터, 이미지 데이터</li>
+      <li>보유 및 이용 기간: 회원 탈퇴 시 또는 위탁 계약 종료 시까지</li>
+    </ul>
+    <h3>[수탁자 2: OpenAI, L.L.C. (국외 이전)]</h3>
+    <ul>
+      <li>이전 국가: 미국</li>
+      <li>이전 목적: AI 인터뷰 질문 생성 및 일기 작문 처리</li>
+      <li>이전 항목: 일기 텍스트 데이터 (대화 기록)</li>
+      <li>이전 방법: 서비스 이용 시 네트워크를 통한 암호화(TLS) 전송</li>
+      <li>데이터 보관: OpenAI API로 전송되는 회원의 데이터는 AI 모델 학습에 사용되지 않습니다. OpenAI의 API 데이터 보관 정책에 따라 최대 30일간 보관 후 자동 삭제됩니다.</li>
+    </ul>
+
+    <h2>5. 쿠키 및 자동 수집 장치</h2>
+    <p>서비스는 회원의 인증 상태를 유지하기 위해 브라우저의 로컬 저장소(localStorage)에 인증 토큰을 저장합니다. 이는 서비스 이용에 필수적이며, 로그아웃 또는 회원 탈퇴 시 삭제됩니다.</p>
+
+    <h2>6. 이용자의 권리 및 행사 방법</h2>
+    <p>이용자는 다음의 권리를 행사할 수 있습니다.</p>
+    <ul>
+      <li>개인정보 열람 요청</li>
+      <li>개인정보 정정 및 삭제 요청</li>
+      <li>개인정보 처리 정지 요청</li>
+      <li>회원 탈퇴 요청</li>
+    </ul>
+    <p>위 권리는 서비스 내 설정 화면을 통해 직접 행사하거나, 아래 이메일을 통해 요청할 수 있습니다. 요청 접수 후 지체 없이 (최대 10일 이내) 조치하겠습니다.</p>
+
+    <h2>7. 동의를 거부할 권리</h2>
+    <p>이용자는 본 개인정보 수집 및 이용, 국외 이전에 대한 동의를 거부할 권리가 있습니다. 단, 동의를 거부할 경우 HARU 서비스의 회원가입 및 핵심 기능(클라우드 저장, AI 기능 등) 이용이 불가능합니다.</p>
+
+    <h2>8. 개인정보 보호책임자 및 문의처</h2>
+    <p>개인정보와 관련된 문의, 열람, 정정, 삭제 요청은 아래 연락처로 문의해 주시기 바랍니다.</p>
+    <ul>
+      <li>운영 주체: (주)한국마이크로시스템</li>
+      <li>개인정보 보호책임자: 대표이사 정구훈</li>
+      <li>이메일: info@microsystem.co.kr</li>
+    </ul>
+
+    <div class="footer">
+      <p>&copy; 2026 (주)한국마이크로시스템. All rights reserved.</p>
+      <p><a href="mailto:info@microsystem.co.kr">info@microsystem.co.kr</a></p>
+    </div>
+  </div>
+</body>
+</html>
