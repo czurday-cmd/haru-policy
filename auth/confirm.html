@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HARU - 이메일 인증 완료</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Pretendard', 'Noto Sans KR', sans-serif;
+      background: #FAF7F2;
+      color: #2F4F4F;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 480px;
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 40px 28px;
+      box-shadow: 0 4px 16px rgba(47, 79, 79, 0.08);
+      text-align: center;
+    }
+    .icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      background: #2F4F4F;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 36px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #2F4F4F;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #5A6F6F;
+      margin-bottom: 8px;
+    }
+    .accent {
+      color: #C4785C;
+      font-weight: 600;
+    }
+    .guide {
+      margin-top: 28px;
+      padding: 16px;
+      background: #FAF7F2;
+      border-radius: 12px;
+      font-size: 14px;
+      color: #5A6F6F;
+      line-height: 1.6;
+    }
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #9AA8A8;
+    }
+    #error-section { display: none; }
+    .error-icon { background: #C4785C; }
+  </style>
+</head>
+<body>
+  <div class="container" id="success-section">
+    <div class="icon">✓</div>
+    <h1>이메일 인증이 완료되었습니다</h1>
+    <p>HARU에 오신 것을 환영합니다.</p>
+    <p>이제 <span class="accent">앱으로 돌아가 로그인</span>해주세요.</p>
+    <div class="guide">
+      📱 <strong>HARU 앱</strong>을 열고<br>
+      가입한 이메일과 비밀번호로 로그인하면<br>
+      나만의 일기 여정이 시작됩니다.
+    </div>
+    <div class="footer">HARU · 하루의 기록</div>
+  </div>
+
+  <div class="container" id="error-section">
+    <div class="icon error-icon">!</div>
+    <h1>인증 링크에 문제가 있습니다</h1>
+    <p id="error-message">인증 링크가 만료되었거나 이미 사용되었습니다.</p>
+    <div class="guide">
+      앱에서 다시 로그인을 시도하시거나,<br>
+      <strong>인증 메일 다시 보내기</strong>를 눌러주세요.
+    </div>
+    <div class="footer">HARU · 하루의 기록</div>
+  </div>
+
+  <script>
+    // URL 해시(#)에서 에러 파라미터 확인
+    // Supabase는 인증 실패 시 #error=...&error_description=... 형식으로 리다이렉트
+    (function() {
+      const hash = window.location.hash || '';
+      const query = window.location.search || '';
+      const params = new URLSearchParams(hash.startsWith('#') ? hash.substring(1) : '');
+      const queryParams = new URLSearchParams(query);
+
+      const error = params.get('error') || queryParams.get('error');
+      const errorDescription = params.get('error_description') || queryParams.get('error_description');
+
+      if (error) {
+        document.getElementById('success-section').style.display = 'none';
+        document.getElementById('error-section').style.display = 'block';
+        if (errorDescription) {
+          document.getElementById('error-message').textContent = decodeURIComponent(errorDescription.replace(/\+/g, ' '));
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
